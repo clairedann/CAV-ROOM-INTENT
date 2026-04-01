@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cav Room Picks 2026-2027</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo-section">
+                <h1 id="mainTitle">Cavanaugh Hall</h1>
+                <span class="subtitle">Room Pick Visualization 2026-2027</span>
+            </div>
+            <div class="disclaimer">
+                <p>⚠️ <strong>NON-BINDING PRE-PLANNING</strong>: This is a tool for communication before Room Pick Day. Choices CAN change!</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="controls">
+                <div class="floor-selector">
+                    <button class="floor-btn" data-floor="1">1st Floor</button>
+                    <button class="floor-btn active" data-floor="2">2nd Floor</button>
+                    <button class="floor-btn" data-floor="3">3rd Floor</button>
+                    <button class="floor-btn" data-floor="4">4th Floor</button>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search by name or room...">
+                </div>
+            </div>
+
+            <div class="viz-area">
+                <div class="map-container" id="mapContainer">
+                    <img id="floorImage" src="assets/floor2.png" alt="Floor Plan">
+                    <svg id="mapOverlay" viewBox="0 0 1024 962">
+                        <!-- Polygons will be injected here -->
+                    </svg>
+                    <div id="tooltip" class="hidden"></div>
+                </div>
+
+                <div class="sidebar">
+                    <section class="stats">
+                        <h3>Quick Stats</h3>
+                        <div id="statsContent">Loading...</div>
+                    </section>
+                    <section class="legend">
+                        <h3>Legend</h3>
+                        <div class="legend-item"><span class="swatch available"></span> Available</div>
+                        <div class="legend-item"><span class="swatch pick-pending"></span> Picked (Pending)</div>
+                        <div class="legend-item"><span class="swatch bathroom"></span> Private Bathroom</div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <section class="pick-list">
+            <h3>Recent Picks</h3>
+            <div class="table-wrapper">
+                <table id="picksTable">
+                    <thead>
+                        <tr>
+                            <th>Lottery #</th>
+                            <th>Name</th>
+                            <th>Room Intended</th>
+                            <th>Roommates</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rows will be injected here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- Live Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
